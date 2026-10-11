@@ -14,43 +14,68 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Aerial_Bomb
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Aerial_Release
+:Act_of_Aerial_Release rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000566> ;
+                       rdfs:label "Act of Aerial Release" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Act of Aerial Release in which some Agent drops, dispenses, or discharges a material artifact from an aircraft or elevated platform into the air." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Reconnaissance_Information_Content_Entity
+:Reconnaissance_Information_Content_Entity rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                             owl:someValuesFrom :Target_Location_Identifier
+                                                           ] ;
+                                           rdfs:label "Reconnaissance Information Content Entity" ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes an Entity's activities, disposition, intent, and/or resources; the composition and capabilities of Equipment and Facilities, and/or the meterological, hydrographic, or geographic characteristics of a particular area." ;
+                                           <https://www.commoncoreontologies.org/ont00001754> "Department of Defense - Dictionary of Military and Associated Terms" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Target_Location_Identifier
+:Target_Location_Identifier rdf:type owl:Class ;
+                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000686> ;
+                            rdfs:label "Target Location Identifier" ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Unit of Geocoordinate that is comprised a geocoordinate that can describe x, y, z axis of a location." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Aerial_Bomb
 :Aerial_Bomb rdf:type owl:Class ;
              rdfs:subClassOf :Bomb ,
-                             [ owl:intersectionOf ( :Aerial_Bomb
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                      owl:someValuesFrom :Aerial_Release_Artifact_Function
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                               owl:someValuesFrom :Aerial_Release_Artifact_Function
                              ] ,
-                             [ owl:intersectionOf ( :Aerial_Bomb
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                      owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000841>
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                               owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000841>
                              ] ;
              rdfs:label "Aerial Bomb" ;
              <http://www.w3.org/2004/02/skos/core#definition> "An aerial bomb is a type of explosive (bomb) or incendiary weapon intended to be dropped from an aircraft and travel through the air on a predictable, unpowered trajectory." ;
              <https://www.commoncoreontologies.org/ont00001754> "https://en.wikipedia.org/wiki/Aerial_bomb" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Aerial_Release_Artifact_Function
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Aerial_Release_Artifact_Function
 :Aerial_Release_Artifact_Function rdf:type owl:Class ;
                                   rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000323> ;
                                   rdfs:label "Aerial Release Artifact Function" ;
                                   <http://www.w3.org/2004/02/skos/core#definition> "An Artifact Function that is realized by a Material Artifact participating in an Aerial Release process." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Bomb
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Bomb
 :Bomb rdf:type owl:Class ;
       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001150> ;
       rdfs:label "Bomb" ;
       <http://www.w3.org/2004/02/skos/core#definition> "A bomb is an explosive weapon that uses the exothermic reaction of an explosive material to provied an extremely sudden and violent release of energy." ;
       <https://www.commoncoreontologies.org/ont00001754> "https://en.wikipedia.org/wiki/Bomb" .
+
+
+###  https://www.commoncoreontologies.org/ont00000320
+<https://www.commoncoreontologies.org/ont00000320> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                                     owl:someValuesFrom :Reconnaissance_Information_Content_Entity
+                                                                   ] .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
