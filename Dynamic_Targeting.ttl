@@ -14,30 +14,55 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Aerial_Release
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Joint_Air_Operations_Plan
+:Joint_Air_Operations_Plan rdf:type owl:Class ;
+                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                           rdfs:label "Joint Air Operations Plan" ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation prescirbes guidance and strategy for air and cyberspace operations." ;
+                           <https://www.commoncoreontologies.org/ont00001745> "Air Force Doctrine Publication 3-60, Targeting" ;
+                           <https://www.commoncoreontologies.org/ont00001749> "JAOP" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Joint_Target_List
+:Joint_Target_List rdf:type owl:Class ;
+                   rdfs:subClassOf :Target_List .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Military_Target_Role
+:Military_Target_Role rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+                      rdfs:label "Military Target Role" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "" ,
+                                                                       "A Role that is realized by a Process that some Agent is the object of a potential military action given some operational requirement." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Operation_Plan
+:Operation_Plan rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001324>
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://www.commoncoreontologies.org/ont00001942> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                rdfs:label "Operation Plan" ;
+                <http://www.w3.org/2004/02/skos/core#altLabel> "OPLAN" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes the conduct of military operations prepared in response to actual and potential contingencies." ;
+                <https://www.commoncoreontologies.org/ont00001754> "Joint Publication 5-0: Joint Operation Planning" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Target_List
+:Target_List rdf:type owl:Class ;
+             rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Aerial_Release
 :Act_of_Aerial_Release rdf:type owl:Class ;
                        rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000566> ;
                        rdfs:label "Act of Aerial Release" ;
                        <http://www.w3.org/2004/02/skos/core#definition> "Act of Aerial Release in which some Agent drops, dispenses, or discharges a material artifact from an aircraft or elevated platform into the air." .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Reconnaissance_Information_Content_Entity
-:Reconnaissance_Information_Content_Entity rdf:type owl:Class ;
-                                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                             owl:someValuesFrom :Target_Location_Identifier
-                                                           ] ;
-                                           rdfs:label "Reconnaissance Information Content Entity" ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes an Entity's activities, disposition, intent, and/or resources; the composition and capabilities of Equipment and Facilities, and/or the meterological, hydrographic, or geographic characteristics of a particular area." ;
-                                           <https://www.commoncoreontologies.org/ont00001754> "Department of Defense - Dictionary of Military and Associated Terms" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Target_Location_Identifier
-:Target_Location_Identifier rdf:type owl:Class ;
-                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000686> ;
-                            rdfs:label "Target Location Identifier" ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Unit of Geocoordinate that is comprised a geocoordinate that can describe x, y, z axis of a location." .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Aerial_Bomb
@@ -69,6 +94,42 @@
       rdfs:label "Bomb" ;
       <http://www.w3.org/2004/02/skos/core#definition> "A bomb is an explosive weapon that uses the exothermic reaction of an explosive material to provied an extremely sudden and violent release of energy." ;
       <https://www.commoncoreontologies.org/ont00001754> "https://en.wikipedia.org/wiki/Bomb" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Reconnaissance_Information_Content_Entity
+:Reconnaissance_Information_Content_Entity rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                             owl:someValuesFrom :Target_Location_Identifier
+                                                           ] ;
+                                           rdfs:label "Reconnaissance Information Content Entity" ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes an Entity's activities, disposition, intent, and/or resources; the composition and capabilities of Equipment and Facilities, and/or the meterological, hydrographic, or geographic characteristics of a particular area." ;
+                                           <https://www.commoncoreontologies.org/ont00001754> "Department of Defense - Dictionary of Military and Associated Terms" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Error
+:Target_Location_Error rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000731> ;
+                       rdfs:label "Target Location Error" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "A Deviation Measurement that is the difference between the estimated coordinates generated for a target and the actual location of the target." ;
+                       <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                       <https://www.commoncoreontologies.org/ont00001749> "TLE" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Identifier
+:Target_Location_Identifier rdf:type owl:Class ;
+                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000686> ;
+                            rdfs:label "Target Location Identifier" ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Unit of Geocoordinate that is comprised a geocoordinate that can describe x, y, z axis of a location." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Vulnerability_Window
+:Target_Vulnerability_Window rdf:type owl:Class ;
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> ;
+                             rdfs:label "Target Vulnerabilty Window" ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Interval during which an adversary target is exposed, unprotected, or incapable of mitigating an attack." ;
+                             <https://www.commoncoreontologies.org/ont00001753> "TVW" .
 
 
 ###  https://www.commoncoreontologies.org/ont00000320
