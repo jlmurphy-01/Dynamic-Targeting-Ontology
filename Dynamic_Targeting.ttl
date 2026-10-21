@@ -14,48 +14,60 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Joint_Air_Operations_Plan
-:Joint_Air_Operations_Plan rdf:type owl:Class ;
-                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
-                           rdfs:label "Joint Air Operations Plan" ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation prescirbes guidance and strategy for air and cyberspace operations." ;
-                           <https://www.commoncoreontologies.org/ont00001745> "Air Force Doctrine Publication 3-60, Targeting" ;
-                           <https://www.commoncoreontologies.org/ont00001749> "JAOP" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Dynamic_Targeting
+:Act_of_Dynamic_Targeting rdf:type owl:Class ;
+                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000109> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                            owl:someValuesFrom :Act_of_Finding_Target
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                            owl:someValuesFrom :Act_of_Fixing_Target
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                            owl:someValuesFrom :Act_of_Tracking_Target
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000132> ;
+                                            owl:someValuesFrom :Act_of_Miltary_Targeting
+                                          ] ;
+                          rdfs:label "Act of Dynamic Targeting" ;
+                          <https://www.commoncoreontologies.org/ont00001737> "An Act of Military Force that prosecutes military targets identified too late, or not selected for action in time to be included in deliberate targeting." ;
+                          <https://www.commoncoreontologies.org/ont00001745> "Joint Publication 3-60, Targeting" ;
+                          <https://www.commoncoreontologies.org/ont00001753> "DT" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Joint_Target_List
-:Joint_Target_List rdf:type owl:Class ;
-                   rdfs:subClassOf :Target_List .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Finding_Target
+:Act_of_Finding_Target rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001251> ;
+                       rdfs:label "Act of Finding Target" ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Find Phase" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "An Act of Intelligence Gathering in which an entity is detected, classified, its allegiance determined, and evaluated against criteria to determine whether it is an potential military target." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Military_Target_Role
-:Military_Target_Role rdf:type owl:Class ;
-                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
-                      rdfs:label "Military Target Role" ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "" ,
-                                                                       "A Role that is realized by a Process that some Agent is the object of a potential military action given some operational requirement." .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Fixing_Target
+:Act_of_Fixing_Target rdf:type owl:Class ;
+                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001251> ;
+                      rdfs:label "Act of Fixing Target" ;
+                      <http://www.w3.org/2004/02/skos/core#altLabel> "Fix Phase" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "An Act of Intelligence Gathering in which the military target's identity is confirmed, the location is determined with sufficient accuracy for an enagement decision, and a temoral window for engagement is estimated." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Operation_Plan
-:Operation_Plan rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001324>
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://www.commoncoreontologies.org/ont00001942> ;
-                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
-                rdfs:label "Operation Plan" ;
-                <http://www.w3.org/2004/02/skos/core#altLabel> "OPLAN" ;
-                <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes the conduct of military operations prepared in response to actual and potential contingencies." ;
-                <https://www.commoncoreontologies.org/ont00001754> "Joint Publication 5-0: Joint Operation Planning" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Miltary_Targeting
+:Act_of_Miltary_Targeting rdf:type owl:Class ;
+                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000741> ;
+                          rdfs:label "Act of Military Targeting" ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "An Act of Targeting wherein some Agent maintains one or more entities as the objects of potential action given some military operational requirement." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Target_List
-:Target_List rdf:type owl:Class ;
-             rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Tracking_Target
+:Act_of_Tracking_Target rdf:type owl:Class ;
+                        rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001251> ;
+                        rdfs:label "Act of Tracking Target" ;
+                        <http://www.w3.org/2004/02/skos/core#altLabel> "An Act of Intelligence in which the location and activity of an emerging target are repeatedly observed over a period of time, yielding updated location and vulnerability window information until the target is engaged or the act is ended." ,
+                                                                       "Tracking Phase" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Aerial_Release
@@ -88,6 +100,15 @@
                                   <http://www.w3.org/2004/02/skos/core#definition> "An Artifact Function that is realized by a Material Artifact participating in an Aerial Release process." .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Air_Operations_Directive
+:Air_Operations_Directive rdf:type owl:Class ;
+                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                          rdfs:label "Air Operations Directive" ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that translates the strategy contained in the Joint Air Operations Plan (JAOP) into daily operational guidance for planning and operations." ;
+                          <https://www.commoncoreontologies.org/ont00001745> "Air Force Doctrine Publication 2-0, Intelligence" ;
+                          <https://www.commoncoreontologies.org/ont00001749> "AOD" .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Bomb
 :Bomb rdf:type owl:Class ;
       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001150> ;
@@ -96,16 +117,84 @@
       <https://www.commoncoreontologies.org/ont00001754> "https://en.wikipedia.org/wiki/Bomb" .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Joint_Air_Operations_Plan
+:Joint_Air_Operations_Plan rdf:type owl:Class ;
+                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                           rdfs:label "Joint Air Operations Plan" ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation prescirbes guidance and strategy for air and cyberspace operations." ;
+                           <https://www.commoncoreontologies.org/ont00001745> "Air Force Doctrine Publication 3-60, Targeting" ;
+                           <https://www.commoncoreontologies.org/ont00001749> "JAOP" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Joint_Target_List
+:Joint_Target_List rdf:type owl:Class ;
+                   rdfs:subClassOf :Target_List ;
+                   rdfs:label "Joint Target List" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Military_Target_Role
+:Military_Target_Role rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+                      rdfs:label "Military Target Role" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "" ,
+                                                                       "A Role that is realized by a Process that some Agent is the object of a potential military action given some operational requirement." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Observation_Temporal_Instant_Identifier
+:Observation_Temporal_Instant_Identifier rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000540> ;
+                                         rdfs:label "Observation Temporal Instant Identifier" ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Instant Identifier that designates the time of an observation." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Operation_Plan
+:Operation_Plan rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001324>
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://www.commoncoreontologies.org/ont00001942> ;
+                                                             owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                rdfs:label "Operation Plan" ;
+                <http://www.w3.org/2004/02/skos/core#altLabel> "OPLAN" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes the conduct of military operations prepared in response to actual and potential contingencies." ;
+                <https://www.commoncoreontologies.org/ont00001754> "Joint Publication 5-0: Joint Operation Planning" .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Reconnaissance_Information_Content_Entity
 :Reconnaissance_Information_Content_Entity rdf:type owl:Class ;
                                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
                                                            [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                             owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
-                                                             owl:someValuesFrom :Target_Location_Identifier
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :Observation_Temporal_Instant_Identifier
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :Target_Location_Identifier
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass <https://www.commoncoreontologies.org/ont00000292>
                                                            ] ;
                                            rdfs:label "Reconnaissance Information Content Entity" ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes an Entity's activities, disposition, intent, and/or resources; the composition and capabilities of Equipment and Facilities, and/or the meterological, hydrographic, or geographic characteristics of a particular area." ;
                                            <https://www.commoncoreontologies.org/ont00001754> "Department of Defense - Dictionary of Military and Associated Terms" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_List
+:Target_List rdf:type owl:Class ;
+             rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
+             rdfs:label "Target List" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Error
@@ -119,7 +208,7 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Identifier
 :Target_Location_Identifier rdf:type owl:Class ;
-                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000686> ;
+                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000390> ;
                             rdfs:label "Target Location Identifier" ;
                             <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Unit of Geocoordinate that is comprised a geocoordinate that can describe x, y, z axis of a location." .
 
