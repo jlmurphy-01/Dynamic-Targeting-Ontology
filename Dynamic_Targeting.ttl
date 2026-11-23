@@ -14,197 +14,362 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Identifying_Entity_Type
-:Act_of_Identifying_Entity_Type rdf:type owl:Class ;
-                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001261> ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
-                                                  owl:someValuesFrom [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001017>
-                                                                                            [ rdf:type owl:Restriction ;
-                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                                                              owl:someValuesFrom :Intelligence_Analyst_Role
-                                                                                            ]
-                                                                                          ) ;
-                                                                       rdf:type owl:Class
-                                                                     ]
-                                                ] ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
-                                                  owl:someValuesFrom :Reconnaissance_Information_Content_Entity
-                                                ] ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
-                                                  owl:someValuesFrom :Entity_Type_Identification_Information_Content_Entity
-                                                ] ;
-                                rdfs:label "Act of Identifying Entity Type" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Positive_Identification
-:Act_of_Positive_Identification rdf:type owl:Class ;
-                                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001261>
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                                             owl:someValuesFrom :Act_of_Identifying_Entity_Type
-                                                                           ]
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                                             owl:someValuesFrom :Act_of_Positive_Identification_Determination
-                                                                           ]
-                                                                           [ rdf:type owl:Restriction ;
-                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                                             owl:someValuesFrom :Act_of_Identifying_Allegiance
-                                                                           ]
-                                                                         ) ;
-                                                      rdf:type owl:Class
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Advanced_Target_Development
+:Act_of_Advanced_Target_Development rdf:type owl:Class ;
+                                    rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000511> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                                      owl:someValuesFrom :Act_of_Target_Validation
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                      owl:someValuesFrom :Act_of_Collateral_Damage_Assessment
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                      owl:someValuesFrom :Act_of_Target_Coordinate_Mensuration
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                      owl:someValuesFrom :Act_of_Weaponeering
                                                     ] ;
-                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001261> ,
-                                                [ rdf:type owl:Restriction ;
-                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                  owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000320>
-                                                ] ;
-                                rdfs:label "Act of Positive Identification" .
+                                    rdfs:label "Act of Advanced Target Development" ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "An Act of Planning in which an Agent completes the target characterization process and defines the minimum intelligence necessary to plan for effective target engagement." ;
+                                    <https://www.commoncoreontologies.org/ont00001745> "CJCSI3370.01B" ;
+                                    <https://www.commoncoreontologies.org/ont00001749> "ATD" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Positive_Identification_Determination
-:Act_of_Positive_Identification_Determination rdf:type owl:Class ;
-                                              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000351> ,
-                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                                                       owl:someValuesFrom :Act_of_Identifying_Entity_Type
-                                                                                     ]
-                                                                                     [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                                                                       owl:someValuesFrom :Act_of_Identifying_Allegiance
-                                                                                     ]
-                                                                                   ) ;
-                                                                rdf:type owl:Class
-                                                              ] ,
-                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
-                                                                                       owl:someValuesFrom :Senior_Intelligence_Duty_Office
-                                                                                     ]
-                                                                                     [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
-                                                                                       owl:allValuesFrom [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001262>
-                                                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                                                                                                  owl:someValuesFrom :Positive_Identification_Authority_Role
-                                                                                                                                ]
-                                                                                                                              ) ;
-                                                                                                           rdf:type owl:Class
-                                                                                                         ]
-                                                                                     ]
-                                                                                   ) ;
-                                                                rdf:type owl:Class
-                                                              ] ,
-                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
-                                                                                       owl:someValuesFrom :Allegiance_Identification_Information_Content_Entity
-                                                                                     ]
-                                                                                     [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
-                                                                                       owl:someValuesFrom :Entity_Type_Identification_Information_Content_Entity
-                                                                                     ]
-                                                                                   ) ;
-                                                                rdf:type owl:Class
-                                                              ] ,
-                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
-                                                                                       owl:someValuesFrom :Rules_of_Engagement
-                                                                                     ]
-                                                                                     [ rdf:type owl:Restriction ;
-                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
-                                                                                       owl:someValuesFrom :Special_Instructions
-                                                                                     ]
-                                                                                   ) ;
-                                                                rdf:type owl:Class
-                                                              ] ;
-                                              rdfs:label "Act of Positive Identification Determination" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Allegiance_Identification_Information_Content_Entity
-:Allegiance_Identification_Information_Content_Entity rdf:type owl:Class ;
-                                                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
-                                                      rdfs:label "Allegiance Identification Information Content Entity" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Entity_Type_Identification_Information_Content_Entity
-:Entity_Type_Identification_Information_Content_Entity rdf:type owl:Class ;
-                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
-                                                       rdfs:label "Entity Type Identification Information Content Entity" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Positive_Identification_Authority_Role
-:Positive_Identification_Authority_Role rdf:type owl:Class ;
-                                        rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000187> ;
-                                        rdfs:label "Positive Identification Authority Role" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Postitive_Identification_Information_Content_Entity
-:Postitive_Identification_Information_Content_Entity rdf:type owl:Class ;
-                                                     owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00000853>
-                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
-                                                                                                  owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
-                                                                                                ]
-                                                                                                [ rdf:type owl:Restriction ;
-                                                                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001816> ;
-                                                                                                  owl:someValuesFrom :Act_of_Positive_Identification_Determination
-                                                                                                ]
-                                                                                              ) ;
-                                                                           rdf:type owl:Class
-                                                                         ] ;
-                                                     rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
-                                                     rdfs:label "Positive Identification Information Content Entity" ;
-                                                     <https://www.commoncoreontologies.org/ont00001748> "A Descriptive Information Content Entity that describes an identification derived from observation and analysis of entity characteristics and meets certain criteria prescribed by a military authority." ,
-                                                                                                        "PID" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Rules_of_Engagement
-:Rules_of_Engagement rdf:type owl:Class ;
-                     rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
-                     rdfs:label "Rules of Engagement" ;
-                     <https://www.commoncoreontologies.org/ont00001737> "A Process Regulation that represents directives issued by competent miltary authorities that delineate the circumstances and limiations under which US Forces will initiate and/or continue combat engagement with other foreces encountered." ;
-                     <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
-                     <https://www.commoncoreontologies.org/ont00001749> "ROE" .
-
-
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Senior_Intelligence_Duty_Office
-:Senior_Intelligence_Duty_Office rdf:type owl:Class ;
-                                 owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001262>
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                                              owl:someValuesFrom :Positive_Identification_Authority_Role
-                                                                            ]
-                                                                            [ rdf:type owl:Restriction ;
-                                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                                              owl:someValuesFrom :Senior_Intelligence_Duty_Officer_Role
-                                                                            ]
-                                                                          ) ;
-                                                       rdf:type owl:Class
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Collateral_Damage_Assessment
+:Act_of_Collateral_Damage_Assessment rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000078> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                       owl:someValuesFrom :Intelligence_Analyst
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                       owl:someValuesFrom :Joint_Desired_Point_of_Impact_Information_Content_Entity
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                       owl:someValuesFrom :Weaponeering_Solution_Information_Content_Entity
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                       owl:someValuesFrom :Collateral_Damage_Estimate_Information_Content_Entity
                                                      ] ;
-                                 rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001262> ;
-                                 rdfs:label "Senior Intelligence Duty Officer" ;
-                                 <https://www.commoncoreontologies.org/ont00001749> "SIDO" ;
-                                 <https://www.commoncoreontologies.org/ont00001754> "A Person who is the bearer of the Senior Intellgence Duty Officer Role" ,
-                                                                                    "AFMAN13-1 AOC Volume 3" .
+                                     rdfs:label "Act of Collateral Damage Assessment" ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "An Act of Estimation in which an Agent makes an analytic judgement derived by determining the amount and effects of collateral damage post target engagement." ;
+                                     <https://www.commoncoreontologies.org/ont00001745> "CJCSI3162.02A" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Senior_Intelligence_Duty_Officer_Role
-:Senior_Intelligence_Duty_Officer_Role rdf:type owl:Class ;
-                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000984> ;
-                                       rdfs:label "Senior Intelligence Duty Officer Role" ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "An Occupation Role that is the senior intelligence officer assigned to the Combat Operations Division within the operations floor of the US Air Force Air Operations Center." ;
-                                       <https://www.commoncoreontologies.org/ont00001745> "AFMAN13-1 AOC Volume 3" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Friendly_Asset_Selection
+:Act_of_Friendly_Asset_Selection rdf:type owl:Class ;
+                                 rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000511> ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                                   owl:someValuesFrom :Act_of_Target_Engagement_Decision
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                   owl:someValuesFrom :Chief_of_Combat_Operations
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001920> ;
+                                                   owl:someValuesFrom :Air_Operations_Directive
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                   owl:someValuesFrom :Friendly_Asset_List_Information_Content_Entity
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                   owl:someValuesFrom :Target_Validation_Decision_Information_Content_Entity
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                   owl:someValuesFrom :Weapon_Capability_Information_Content_Entity
+                                                 ] ;
+                                 rdfs:label "Act of Friendly Asset Selection" ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "An Act of Planning in which an Agent selects one or more friendly operational assets, platforms, or units to execute or support an engagement plan against a target, based on target characteristics, weaponeering and collateral risk information, and asset availability and suitability." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Special_Instructions
-:Special_Instructions rdf:type owl:Class ;
-                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
-                      rdfs:label "Special Instructions" ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that provide an airspace user with directions to balance combat effectiveness with safe, orderly, and efficient use of airspace, and provides operational and tactical direction at the appropriate levels of detail." ;
-                      <https://www.commoncoreontologies.org/ont00001749> "SPINS" ;
-                      <https://www.commoncoreontologies.org/ont00001754> "https://www.doctrine.af.mil/Portals/61/documents/AFDP_3-52/3-52-AFDP-AIRSPACE-CONTROL.pdf" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Target_Coordinate_Mensuration
+:Act_of_Target_Coordinate_Mensuration rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000345> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                                        owl:someValuesFrom :Act_of_Weaponeering
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                        owl:someValuesFrom :Intelligence_Analyst
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                        owl:someValuesFrom :Reconnaissance_Information_Content_Entity
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                        owl:someValuesFrom :Target_Location_Identifier
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                        owl:someValuesFrom :Joint_Desired_Point_of_Impact_Information_Content_Entity
+                                                      ] ;
+                                      rdfs:label "Act of Target Coordinate Mensuration" ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "An Act of Measuring in which an Agent uses NGA-validated tools and methods to produce coordinates (latitude, longitude and elevation), that include associated errors to support the use of coordinate-seeking weapons (CSWs)." ;
+                                      <https://www.commoncoreontologies.org/ont00001745> "CJCSI 3505.01E" ;
+                                      <https://www.commoncoreontologies.org/ont00001749> "TCM" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Target_Engagement_Decision
+:Act_of_Target_Engagement_Decision rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000351> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                     owl:someValuesFrom :Act_of_Advanced_Target_Development
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                     owl:someValuesFrom :Act_of_Friendly_Asset_Selection
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                     owl:someValuesFrom :Act_of_Target_Validation
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                     owl:someValuesFrom :Chief_of_Combat_Operations
+                                                   ] ;
+                                   rdfs:label "Act of Target Engagement Decision" ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "An Act of Commanding in which an authorized decision-maker evaluates target validation, advanced target development, and friendly asset selection information to formally approve or disapprove engaging a target, resulting in an engagement authorization or disapproval directive." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Target_Validation
+:Act_of_Target_Validation rdf:type owl:Class ;
+                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000636> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                            owl:someValuesFrom :Act_of_Friendly_Asset_Selection
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                            owl:someValuesFrom [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001194>
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                                                        owl:someValuesFrom :Valid_Target_Role
+                                                                                      ]
+                                                                                    ) ;
+                                                                 rdf:type owl:Class
+                                                               ]
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Collateral_Damage_Estimate_Information_Content_Entity
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Collateral_Damage_Guidance_Information_Content_Entity
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Law_of_Armed_Conflict
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :No_Strike_List
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Weaponeering_Solution_Information_Content_Entity
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Air_Operations_Directive
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Joint_Target_List
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Operation_Plan
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Restricted_Target_List
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                            owl:someValuesFrom :Rules_of_Engagement
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                            owl:someValuesFrom :Target_Validation_Decision_Information_Content_Entity
+                                          ] ;
+                          rdfs:label "Act of Target Validation" ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "An Act of Appraisal in which an Agent ensures all vetted targets meet the objectives and criteria outlined in the commander’s guidance and ensures compliance with the law of armed conflict and rules of engagement." ;
+                          <https://www.commoncoreontologies.org/ont00001745> "CJCSI3370.01B" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Act_of_Weaponeering
+:Act_of_Weaponeering rdf:type owl:Class ;
+                     rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000511> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                       owl:someValuesFrom :Act_of_Collateral_Damage_Assessment
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                       owl:someValuesFrom :Intelligence_Analyst
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                       owl:someValuesFrom :Desired_Effect_Information_Content_Entity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                       owl:someValuesFrom :Joint_Desired_Point_of_Impact_Information_Content_Entity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                       owl:someValuesFrom :Weapon_Capability_Information_Content_Entity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                       owl:someValuesFrom :Weaponeering_Solution_Information_Content_Entity
+                                     ] ;
+                     rdfs:label "Act of Weaponeering" ,
+                                "An Act of Planning in which an Agent determines the quantity of a specific type of lethal or non-lethal weapons required to achieve a specific level of damage to a given target, considering target vulnerability, weapons characteristics and effects, and delivery parameters." ;
+                     <https://www.commoncoreontologies.org/ont00001745> "CJCSI3370.01B" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Collateral_Damage_Estimate_Information_Content_Entity
+:Collateral_Damage_Estimate_Information_Content_Entity rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001176> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                         owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                       ] ;
+                                                       rdfs:label "Collateral Damage Estimate Information Content Entity" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "An Estimate Information Content Entity that records the potential unintentional or incidental injury or damage to persons or objects that would not be lawful military targets in the circumstances ruling at the time." ;
+                                                       <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                                                       <https://www.commoncoreontologies.org/ont00001749> "CDE" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Collateral_Damage_Guidance_Information_Content_Entity
+:Collateral_Damage_Guidance_Information_Content_Entity rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                                                       rdfs:label "Collateral Damage Guidance Information Content Entity" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes acceptable thresholds, mitigation standards, Non-combatant Casualty Cutoff Values (NCV), and approval authority levels governing unintended incidental damage to non-combatant persons or civilian/protected objects." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Desired_Effect_Information_Content_Entity
+:Desired_Effect_Information_Content_Entity rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000127> ;
+                                           rdfs:label "Desired Effect Information Content Entity" ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "A Performance Specification that prescribes the required physical, functional, or behavioral outcome to be achieved against a Target." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Friendly_Asset_Assignment_Information_Content_Entity
+:Friendly_Asset_Assignment_Information_Content_Entity rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                        owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                      ] ;
+                                                      rdfs:label "Friendly Asset Assignment Information Content Entity" ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entitiy that designates a specific friendly asset, platform, or force package to be tasked against a Target to achieve a desired effect." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Friendly_Asset_List_Information_Content_Entity
+:Friendly_Asset_List_Information_Content_Entity rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
+                                                rdfs:label "Friendly Asset List Information Content Entity" ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that enumerates and identifies friendly platforms, units, or weapon systems available for potential tasking." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Joint_Desired_Point_of_Impact_Information_Content_Entity
+:Joint_Desired_Point_of_Impact_Information_Content_Entity rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000390> ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                            owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                          ] ;
+                                                          rdfs:label "Joint Desired Point of Impact Information Content Entity" ;
+                                                          <https://www.commoncoreontologies.org/ont00001737> "A Spatial Region Identifier the designates a unique, alpha-numeric coded precise aimpoint associated with a target to achieve an explicit weaponeering objective, and identified by a three dimensional (latitude, longitude, elevation) mensurated coordinate." ;
+                                                          <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                                                          <https://www.commoncoreontologies.org/ont00001749> "JDPI" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Law_of_Armed_Conflict
+:Law_of_Armed_Conflict rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                       rdfs:label "Law of Armed Conflict" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that is the part of international law that regulates the conduct of armed hostilities." ;
+                       <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                       <https://www.commoncoreontologies.org/ont00001749> "LOAC" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#No_Strike_List
+:No_Strike_List rdf:type owl:Class ;
+                rdfs:subClassOf :Target_List ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                                     <https://www.commoncoreontologies.org/ont00000472>
+                                                                   )
+                                                     ]
+                                ] ;
+                rdfs:label "No Strike List" ;
+                <https://www.commoncoreontologies.org/ont00001749> "NSL" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Target_Validation_Decision_Information_Content_Entity
+:Target_Validation_Decision_Information_Content_Entity rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                         owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                       ] ;
+                                                       rdfs:label "A Descriptive Information Content Entity stating whether the target meets intelligence accuracy, operational guidance, Law of Armed Conflict, Rules of Engagement, and restricted/no-strike compliance criteria." ,
+                                                                  "Target Validation Decision Information Content Entity" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Valid_Target_Role
+:Valid_Target_Role rdf:type owl:Class ;
+                   rdfs:subClassOf :Military_Target_Role ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000197> ;
+                                     owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                   ] ;
+                   rdfs:label "Valid Target Role" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A Military Target Role that is realized by a Process and inheres in a Material Entity, signifying that the bearer has been vetted against intelligence accuracy, operational guidance, Law of Armed Conflict, Rules of Engagement, and restricted/no-strike constraints and is legally and operationally eligible for engagement." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Weapon_Capability_Information_Content_Entity
+:Weapon_Capability_Information_Content_Entity rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001163> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000445>
+                                                              ] ;
+                                              rdfs:label "Weapon Capability Information Content Entity" ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Information Content Entity that quantifies empirical performance, lethality, accuracy, or reliability characteristics about a weapon." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting#Weaponeering_Solution_Information_Content_Entity
+:Weaponeering_Solution_Information_Content_Entity rdf:type owl:Class ;
+                                                  rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                    owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                  ] ;
+                                                  rdfs:label "Weaponeering Solution Information Content Entity" ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes the quantity of a specific type of lethal or nonlethal means required to create a desired effect on a given target." ;
+                                                  <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Aerial_Release
@@ -276,7 +441,7 @@
                                                        owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
                                                                                                  [ rdf:type owl:Restriction ;
                                                                                                    owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                                                                                   owl:someValuesFrom :Potential_Miltary_Target_Role
+                                                                                                   owl:someValuesFrom :Potential_Military_Target_Role
                                                                                                  ]
                                                                                                ) ;
                                                                             rdf:type owl:Class
@@ -369,6 +534,10 @@
 :Act_of_Fixing_Target rdf:type owl:Class ;
                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001251> ,
                                       [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                        owl:someValuesFrom :Act_of_Tracking_Target
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty <https://www.commoncoreontologies.org/ont00001920> ;
                                         owl:someValuesFrom :Dynamic_Targeting_Plan_Prescription
                                       ] ;
@@ -411,6 +580,31 @@
                                <http://www.w3.org/2004/02/skos/core#definition> "An Act of Identifying in which an Agent uses a reconnaissance product describing an entity to determine to evaluate the entity's Allegiance (Enemy, Ally, Neutral) , resulting in that entity bearing Allegiance Role." .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Identifying_Entity_Type
+:Act_of_Identifying_Entity_Type rdf:type owl:Class ;
+                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001261> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                  owl:someValuesFrom [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001017>
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                                                                                              owl:someValuesFrom :Intelligence_Analyst_Role
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ]
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                  owl:someValuesFrom :Reconnaissance_Information_Content_Entity
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                  owl:someValuesFrom :Entity_Type_Identification_Information_Content_Entity
+                                                ] ;
+                                rdfs:label "Act of Identifying Entity Type" .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Identifying_Potential_Target
 :Act_of_Identifying_Potential_Target rdf:type owl:Class ;
                                      owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001261>
@@ -420,7 +614,7 @@
                                                                                                        ]
                                                                                                        [ rdf:type owl:Restriction ;
                                                                                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
-                                                                                                         owl:someValuesFrom [ owl:intersectionOf ( :Potential_Miltary_Target_Role
+                                                                                                         owl:someValuesFrom [ owl:intersectionOf ( :Potential_Military_Target_Role
                                                                                                                                                    [ rdf:type owl:Restriction ;
                                                                                                                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000197> ;
                                                                                                                                                      owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000040>
@@ -476,15 +670,98 @@
                                      <http://www.w3.org/2004/02/skos/core#definition> "An Act of Identifying in which an Agent uses a reconnaissance product describing an entity to determine that the entity warrants evaluation as a potential target, resulting in that entity bearing Potential Target Role." .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Miltary_Targeting
-:Act_of_Miltary_Targeting rdf:type owl:Class ;
-                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000741> ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
-                                            owl:someValuesFrom :Act_of_Dynamic_Targeting
-                                          ] ;
-                          rdfs:label "Act of Military Targeting" ;
-                          <http://www.w3.org/2004/02/skos/core#definition> "An Act of Targeting wherein some Agent maintains one or more entities as the objects of potential action given some military operational requirement." .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Military_Targeting
+:Act_of_Military_Targeting rdf:type owl:Class ;
+                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000741> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                             owl:someValuesFrom :Act_of_Dynamic_Targeting
+                                           ] ;
+                           rdfs:label "Act of Military Targeting" ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "An Act of Targeting wherein some Agent maintains one or more entities as the objects of potential action given some military operational requirement." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Positive_Identification
+:Act_of_Positive_Identification rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001261>
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                             owl:someValuesFrom :Act_of_Identifying_Allegiance
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                             owl:someValuesFrom :Act_of_Identifying_Entity_Type
+                                                                           ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                             owl:someValuesFrom :Act_of_Positive_Identification_Determination
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001261> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                  owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000320>
+                                                ] ;
+                                rdfs:label "Act of Positive Identification" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Positive_Identification_Determination
+:Act_of_Positive_Identification_Determination rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000351> ,
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                                       owl:someValuesFrom :Act_of_Identifying_Allegiance
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                                       owl:someValuesFrom :Act_of_Identifying_Entity_Type
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ,
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                                                       owl:someValuesFrom :Senior_Intelligence_Duty_Officer
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                                                                       owl:allValuesFrom [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001262>
+                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                                                                                                                                  owl:someValuesFrom :Positive_Identification_Authority_Role
+                                                                                                                                ]
+                                                                                                                              ) ;
+                                                                                                           rdf:type owl:Class
+                                                                                                         ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ,
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                                       owl:someValuesFrom :Allegiance_Identification_Information_Content_Entity
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                                       owl:someValuesFrom :Entity_Type_Identification_Information_Content_Entity
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ,
+                                                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                                       owl:someValuesFrom :Rules_of_Engagement
+                                                                                     ]
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                                       owl:someValuesFrom :Special_Instructions
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] ;
+                                              rdfs:label "Act of Positive Identification Determination" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Target_Decision
@@ -504,16 +781,107 @@
                           <https://www.commoncoreontologies.org/ont00001745> "Joint Publication 3-60, Targeting" .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Target_Location_Accuracy_Estimation
+:Act_of_Target_Location_Accuracy_Estimation rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000078> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass :Target_Location_Identifier
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass :Target_Location_Accuracy
+                                                            ] ;
+                                            rdfs:label "Act of Target Location Accuracy Estimation" ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "An Act of Estimation in which a Circular Error 90% Measurement, and where available a Linear Error 90% Measurement, of a Target Location Identifier are used to produce a Target Location Error, which expresses how far the reported location of a target may differ from the target’s actual location." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Target_Location_Change
+:Act_of_Target_Location_Change rdf:type owl:Class ;
+                               rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000065> ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                 owl:someValuesFrom :Target_Track_Point_Information_Content_Entity
+                                               ] ;
+                               rdfs:label "Act of Target Location Change" ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "An Act of Location Change in which an Agent alters the spatial region or site occupied by a material entity designated as a target." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Target_Vulnerability_Window_Estimation
+:Act_of_Target_Vulnerability_Window_Estimation rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000078> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                 owl:someValuesFrom :Observation_Temporal_Instant_Identifier
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                 owl:someValuesFrom :Target_Dwell_Time_Estimate_Information_Content_Entity
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                                                 owl:someValuesFrom :Target_Engagement_Timeline_Estimate_Information_Content_Entity
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                                                 owl:someValuesFrom :Target_Vulnerability_Window_Estimate_Information_Content_Entity
+                                                               ] ;
+                                               rdfs:label "Act of Target Vulnerability Window Estimation" ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "An Act of Estimation representing the predicted temporal interval or duration during which a target is exposed and susceptible to friendly engagement." .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Act_of_Tracking_Target
 :Act_of_Tracking_Target rdf:type owl:Class ;
                         rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001251> ,
                                         [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                          owl:someValuesFrom :Act_of_Target_Decision
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                          owl:someValuesFrom :Act_of_Target_Location_Change
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001833> ;
+                                          owl:someValuesFrom :Intelligence_Analyst
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
                                           owl:onProperty <https://www.commoncoreontologies.org/ont00001920> ;
                                           owl:someValuesFrom :Dynamic_Targeting_Plan_Prescription
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                          owl:someValuesFrom :Positive_Identification_Information_Content_Entity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                          owl:someValuesFrom :Reconnaissance_Information_Content_Entity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001921> ;
+                                          owl:someValuesFrom :Target_Track_Point_Information_Content_Entity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                          owl:someValuesFrom :Target_Track_Information_Content_Entity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                          owl:someValuesFrom :Target_Track_Status_Information_Content_Entity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
+                                          owl:someValuesFrom :Target_Vulnerability_Window_Estimate_Information_Content_Entity
                                         ] ;
                         rdfs:label "Act of Tracking Target" ;
-                        <http://www.w3.org/2004/02/skos/core#altLabel> "An Act of Intelligence in which the location and activity of an emerging target are repeatedly observed over a period of time, yielding updated location and vulnerability window information until the target is engaged or the act is ended." ,
-                                                                       "Tracking Phase" .
+                        <http://www.w3.org/2004/02/skos/core#altLabel> "Tracking Phase" ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "An Act of Intelligence in which the location and activity of an emerging target are repeatedly observed over a period of time, yielding updated location and vulnerability window information until the target is engaged or the act is ended." .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Aerial_Bomb
@@ -548,6 +916,12 @@
                           <https://www.commoncoreontologies.org/ont00001749> "AOD" .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Allegiance_Identification_Information_Content_Entity
+:Allegiance_Identification_Information_Content_Entity rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
+                                                      rdfs:label "Allegiance Identification Information Content Entity" .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Bomb
 :Bomb rdf:type owl:Class ;
       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001150> ;
@@ -576,12 +950,25 @@
                                                 ] ;
                             rdfs:subClassOf [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
-                                              owl:someValuesFrom :Target_Enagement_Authority_Role
+                                              owl:someValuesFrom :Target_Engagement_Authority_Role
                                             ] ;
                             rdfs:label "Chief of Combat Operations" ;
                             <http://www.w3.org/2004/02/skos/core#definition> "A person who is the bearer of the Chief of Combat Operations Role." ,
                                                                              "https://static.e-publishing.af.mil/production/1/af_a3/publication/afman13-1aocv3/afman13-1aocv3_.pdf" ;
                             <https://www.commoncoreontologies.org/ont00001749> "CCO" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Circular_Error_90_Measurement
+:Circular_Error_90_Measurement rdf:type owl:Class ;
+                               rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000731> ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                 owl:someValuesFrom :Target_Location_Identifier
+                                               ] ;
+                               owl:disjointWith :Linear_Error_90_Measurement ;
+                               rdfs:label "Circular Error 90% Measurement" ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "A Deviation Measurement that is a horizontal positional accuracy metric defined as the radius of a circle in the horizontal plane within which 90% of measured positions, target coordinates, or impacts are expected to fall relative to the true position or aimpoint." ;
+                               <https://www.commoncoreontologies.org/ont00001749> "CE90" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Dynamic_Target
@@ -623,6 +1010,12 @@
                                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
                                      rdfs:label "Dynamic Targeting Plan Prescription" ;
                                      <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes a plan for prosecuting targets identified too late, or no selected for action in time to be included in deliberate targeting." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Entity_Type_Identification_Information_Content_Entity
+:Entity_Type_Identification_Information_Content_Entity rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
+                                                       rdfs:label "Entity Type Identification Information Content Entity" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Gain_of_Allegiance_Role
@@ -694,7 +1087,7 @@
                                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001194>
                                                                           [ rdf:type owl:Restriction ;
                                                                             owl:onProperty <https://www.commoncoreontologies.org/ont00001986> ;
-                                                                            owl:someValuesFrom [ owl:intersectionOf ( :Potential_Miltary_Target_Role
+                                                                            owl:someValuesFrom [ owl:intersectionOf ( :Potential_Military_Target_Role
                                                                                                                       [ rdf:type owl:Restriction ;
                                                                                                                         owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000197> ;
                                                                                                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
@@ -743,7 +1136,8 @@
                                                                ) ;
                                             rdf:type owl:Class
                                           ] ;
-                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001262> .
+                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001262> ;
+                      rdfs:label "Intelligence Analyst" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Intelligence_Analyst_Role
@@ -754,7 +1148,7 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Joint_Air_Operations_Plan
 :Joint_Air_Operations_Plan rdf:type owl:Class ;
-                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                           rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000974> ;
                            rdfs:label "Joint Air Operations Plan" ;
                            <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation prescirbes guidance and strategy for air and cyberspace operations." ;
                            <https://www.commoncoreontologies.org/ont00001745> "Air Force Doctrine Publication 3-60, Targeting" ;
@@ -763,11 +1157,27 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Joint_Target_List
 :Joint_Target_List rdf:type owl:Class ;
-                   rdfs:subClassOf :Target_List ;
+                   rdfs:subClassOf :Target_List ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                     owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                   ] ;
                    rdfs:label "Joint Target List" ;
                    <http://www.w3.org/2004/02/skos/core#definition> "A consolidated list of selected targets, upon which there are no restrictions placed, considered to have military significance in the joint force commander’s operational area." ;
                    <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
                    <https://www.commoncoreontologies.org/ont00001748> "JTL" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Linear_Error_90_Measurement
+:Linear_Error_90_Measurement rdf:type owl:Class ;
+                             rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000731> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                               owl:someValuesFrom :Target_Location_Identifier
+                                             ] ;
+                             rdfs:label "Linear Error 90% Measurement" ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "A Deviation Measurement that is a one-dimensional accuracy metric representing the vertical distance (plus or minus) from a true elevation within which 90% of measured or computed elevation points are expected to fall." ;
+                             <https://www.commoncoreontologies.org/ont00001749> "LE90" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Military_Target_Role
@@ -778,8 +1188,7 @@
                                         owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
                                       ] ;
                       rdfs:label "Military Target Role" ;
-                      <http://www.w3.org/2004/02/skos/core#definition> "" ,
-                                                                       "A Role that is realized by a Process that some Agent is the object of a potential military action given some operational requirement." .
+                      <http://www.w3.org/2004/02/skos/core#definition> "A Role that is realized by a Process that some Agent is the object of a potential military action given some operational requirement." .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Observation_Temporal_Instant_Identifier
@@ -791,7 +1200,7 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Operation_Plan
 :Operation_Plan rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001324>
+                owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00000974>
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty <https://www.commoncoreontologies.org/ont00001942> ;
                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
@@ -799,17 +1208,43 @@
                                                          ) ;
                                       rdf:type owl:Class
                                     ] ;
-                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000974> ;
                 rdfs:label "Operation Plan" ;
                 <http://www.w3.org/2004/02/skos/core#altLabel> "OPLAN" ;
                 <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that prescribes the conduct of military operations prepared in response to actual and potential contingencies." ;
                 <https://www.commoncoreontologies.org/ont00001754> "Joint Publication 5-0: Joint Operation Planning" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Potential_Miltary_Target_Role
-:Potential_Miltary_Target_Role rdf:type owl:Class ;
-                               rdfs:subClassOf :Target_Role ;
-                               rdfs:label "Potential Military Target Role" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Positive_Identification_Authority_Role
+:Positive_Identification_Authority_Role rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000187> ;
+                                        rdfs:label "Positive Identification Authority Role" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Positive_Identification_Information_Content_Entity
+:Positive_Identification_Information_Content_Entity rdf:type owl:Class ;
+                                                    owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00000853>
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                                                 owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000040>
+                                                                                               ]
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001816> ;
+                                                                                                 owl:someValuesFrom :Act_of_Positive_Identification_Determination
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] ;
+                                                    rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ;
+                                                    rdfs:label "Positive Identification Information Content Entity" ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity that describes an identification derived from observation and analysis of entity characteristics and meets certain criteria prescribed by a military authority." ;
+                                                    <https://www.commoncoreontologies.org/ont00001748> "PID" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Potential_Military_Target_Role
+:Potential_Military_Target_Role rdf:type owl:Class ;
+                                rdfs:subClassOf :Target_Role ;
+                                rdfs:label "Potential Military Target Role" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Reconnaissance_Information_Content_Entity
@@ -845,20 +1280,111 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Restricted_Target_List
 :Restricted_Target_List rdf:type owl:Class ;
-                        rdfs:subClassOf :Target_List ;
+                        rdfs:subClassOf :Target_List ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                          owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                        ] ;
                         rdfs:label "Restricted Target List" ;
                         <http://www.w3.org/2004/02/skos/core#definition> "A list of restricted targets nominated by elements of the joint force and approved by the joint force commander or directed by higher authorities." ;
                         <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
                         <https://www.commoncoreontologies.org/ont00001748> "RTL" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Enagement_Authority_Role
-:Target_Enagement_Authority_Role rdf:type owl:Class ;
-                                 rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000187> ;
-                                 rdfs:label "Target Enagement Authority Role" ;
-                                 <http://www.w3.org/2004/02/skos/core#altLabel> "TEA" ;
-                                 <http://www.w3.org/2004/02/skos/core#definition> "An Authority Role that inheres in an Agent (typically a Commander or Command Node) by virtue of a directive or delegation process, and which is realized in a process of approving or authorizing the engagement of a designated target." ,
-                                                                                  "An Authority Role that inheres in an Agent by virtue of a directive process and which is realized in a process of approving or authorizing the adjudication and determination of an ISR-derived target positive identification." .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Rules_of_Engagement
+:Rules_of_Engagement rdf:type owl:Class ;
+                     rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                     rdfs:label "Rules of Engagement" ;
+                     <https://www.commoncoreontologies.org/ont00001737> "A Process Regulation that represents directives issued by competent miltary authorities that delineate the circumstances and limiations under which US Forces will initiate and/or continue combat engagement with other foreces encountered." ;
+                     <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                     <https://www.commoncoreontologies.org/ont00001749> "ROE" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Senior_Intelligence_Duty_Officer
+:Senior_Intelligence_Duty_Officer rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( <https://www.commoncoreontologies.org/ont00001262>
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                                                                               owl:someValuesFrom :Positive_Identification_Authority_Role
+                                                                             ]
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000196> ;
+                                                                               owl:someValuesFrom :Senior_Intelligence_Duty_Officer_Role
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                  rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001262> ;
+                                  rdfs:label "Senior Intelligence Duty Officer" ;
+                                  <https://www.commoncoreontologies.org/ont00001749> "SIDO" ;
+                                  <https://www.commoncoreontologies.org/ont00001754> "A Person who is the bearer of the Senior Intellgence Duty Officer Role" ,
+                                                                                     "AFMAN13-1 AOC Volume 3" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Senior_Intelligence_Duty_Officer_Role
+:Senior_Intelligence_Duty_Officer_Role rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000984> ;
+                                       rdfs:label "Senior Intelligence Duty Officer Role" ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An Occupation Role that is the senior intelligence officer assigned to the Combat Operations Division within the operations floor of the US Air Force Air Operations Center." ;
+                                       <https://www.commoncoreontologies.org/ont00001745> "AFMAN13-1 AOC Volume 3" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Special_Instructions
+:Special_Instructions rdf:type owl:Class ;
+                      rdfs:subClassOf <https://www.commoncoreontologies.org/ont00001324> ;
+                      rdfs:label "Special Instructions" ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A Process Regulation that provide an airspace user with directions to balance combat effectiveness with safe, orderly, and efficient use of airspace, and provides operational and tactical direction at the appropriate levels of detail." ;
+                      <https://www.commoncoreontologies.org/ont00001749> "SPINS" ;
+                      <https://www.commoncoreontologies.org/ont00001754> "https://www.doctrine.af.mil/Portals/61/documents/AFDP_3-52/3-52-AFDP-AIRSPACE-CONTROL.pdf" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Dwell_Interval
+:Target_Dwell_Interval rdf:type owl:Class ;
+                       rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> ;
+                       rdfs:label "Target Dwell Interval" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Interval that is occupied by a process in which a target remains stationary at a specific location or persists in an active operational state." ;
+                       <http://www.w3.org/2004/02/skos/core#example> "Bounded by the target's arrival or activation at a site and its subsequent departure, concealment, or shutdown, this interval represents the physical temporal span of adversary exposure measured by a Target Dwell Time Estimate." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Dwell_Time_Estimate_Information_Content_Entity
+:Target_Dwell_Time_Estimate_Information_Content_Entity rdf:type owl:Class ;
+                                                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000745> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <https://www.commoncoreontologies.org/ont00001966> ;
+                                                                         owl:someValuesFrom :Target_Dwell_Interval
+                                                                       ] ;
+                                                       rdfs:label "Target Dwell Time Estimate Information Content Entity" ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "A Point Estimate Information Content Entity that is a measurement of the predicted or approximated duration of a temporal region occupied by a target remaining in a specific location or operational state." ;
+                                                       <http://www.w3.org/2004/02/skos/core#example> "This estimate is typically derived from Intelligence Preparation of the Battlespace (IPB), pattern-of-life analysis, or known adversary system operating cycles (such as setup, firing/emission, and teardown times) to establish the upper bound of target exposure." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Engagement_Authority_Role
+:Target_Engagement_Authority_Role rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000187> ;
+                                  rdfs:label "Target Enagement Authority Role" ;
+                                  <http://www.w3.org/2004/02/skos/core#altLabel> "TEA" ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "An Authority Role that inheres in an Agent (typically a Commander or Command Node) by virtue of a directive or delegation process, and which is realized in a process of approving or authorizing the engagement of a designated target." ,
+                                                                                   "An Authority Role that inheres in an Agent by virtue of a directive process and which is realized in a process of approving or authorizing the adjudication and determination of an ISR-derived target positive identification." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Engagement_Timeline_Estimate_Information_Content_Entity
+:Target_Engagement_Timeline_Estimate_Information_Content_Entity rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000745> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001966> ;
+                                                                                  owl:someValuesFrom :Target_Engagement_Timeline_Interval
+                                                                                ] ;
+                                                                rdfs:label "Target Engagement Timeline Estimate Information Content Entity" ;
+                                                                <http://www.w3.org/2004/02/skos/core#definition> "A Point Estimate Information Content Entity that is a measurement of the predicted or approximated duration required for friendly forces to complete the remaining phases of a target engagement process from identification to weapon impact." ;
+                                                                <http://www.w3.org/2004/02/skos/core#example> "This estimate aggregates kill-chain latencies, including finding, fixing, command and control (C2) approval, advnaced target development, platform transit, and munition time-of-flight, to determine whether a strike can be executed before a target conceals itself or relocates." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Engagement_Timeline_Interval
+:Target_Engagement_Timeline_Interval rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> ;
+                                     rdfs:label "Target Engagement Timeline Interval" ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Interval spanning from the initiation of target processing or positive identification through weapon delivery and impact on the target." ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "This interval represents the continuous temporal footprint of the friendly kill-chain execution including the Find, Fix,  Track, Target, and Engage phases of F2T2EA." .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_List
@@ -867,18 +1393,29 @@
              rdfs:label "Target List" .
 
 
-###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Error
-:Target_Location_Error rdf:type owl:Class ;
-                       rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000731> ;
-                       rdfs:label "Target Location Error" ;
-                       <http://www.w3.org/2004/02/skos/core#definition> "A Deviation Measurement that is the difference between the estimated coordinates generated for a target and the actual location of the target." ;
-                       <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
-                       <https://www.commoncoreontologies.org/ont00001749> "TLE" .
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Accuracy
+:Target_Location_Accuracy rdf:type owl:Class ;
+                          rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000731> ;
+                          rdfs:label "Target Location Accuracy" ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "A Deviation Measurement that is the difference between the estimated coordinates generated for a target and the actual location of the target." ;
+                          <https://www.commoncoreontologies.org/ont00001745> "DoD Dictionary (2018)" ;
+                          <https://www.commoncoreontologies.org/ont00001749> "TLA" .
 
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Location_Identifier
 :Target_Location_Identifier rdf:type owl:Class ;
-                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000390> ;
+                            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000390> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty <https://www.commoncoreontologies.org/ont00001916> ;
+                                              owl:someValuesFrom [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000029>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000124> ;
+                                                                                          owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ]
+                                            ] ;
                             rdfs:label "Target Location Identifier" ;
                             <http://www.w3.org/2004/02/skos/core#definition> "A Measurement Unit of Geocoordinate that is comprised a geocoordinate that can describe x, y, z axis of a location." .
 
@@ -890,12 +1427,107 @@
              <http://www.w3.org/2004/02/skos/core#definition> "A Role that is realized by a Process that some Agent is the object of a potential action given some operational requirement." .
 
 
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Track_Information_Content_Entity
+:Target_Track_Information_Content_Entity rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                           owl:someValuesFrom :Target_Track_Point_Information_Content_Entity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                           owl:someValuesFrom :Target_Vulnerability_Window_Estimate_Information_Content_Entity
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                           owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                         ] ;
+                                         rdfs:label "Target Track Information Content Entity" ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Content Entity the represents the successive positions of a moving object." ;
+                                         <https://www.commoncoreontologies.org/ont00001754> "DoD Dictionary (2018)" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Track_Point_Information_Content_Entity
+:Target_Track_Point_Information_Content_Entity rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000853> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                                 owl:someValuesFrom :Observation_Temporal_Instant_Identifier
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                                                                 owl:someValuesFrom :Target_Location_Identifier
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                 owl:someValuesFrom :Target_Location_Accuracy
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                 owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                               ] ;
+                                               rdfs:label "Target Track Point Information Content Entity" ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A Descriptive Information Conent Entity that describes a site that a Target occupies at a point or interval of time." .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Track_Status_Information_Content_Entity
+:Target_Track_Status_Information_Content_Entity rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000293> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                  owl:someValuesFrom :Target_Track_Information_Content_Entity
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                  owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                ] ;
+                                                rdfs:label "Target Track Status Information Content Entity" ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A Nominal Measurement Information Content Entity that classifies the current operational or lifecycle state of a Target Track (such as tentative, confirmed, coasting, or dropped) based on the continuity and confidence of its position updates." .
+
+
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Vulnerability_Window
 :Target_Vulnerability_Window rdf:type owl:Class ;
                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000202> ;
                              rdfs:label "Target Vulnerabilty Window" ;
-                             <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Interval during which an adversary target is exposed, unprotected, or incapable of mitigating an attack." ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "A Temporal Interval during which a target is simultaneously exposed, detectable, identifiable, and susceptible to effective strike or engagement by friendly forces." ;
                              <https://www.commoncoreontologies.org/ont00001753> "TVW" .
+
+
+###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/Target_Vulnerability_Window_Estimate_Information_Content_Entity
+:Target_Vulnerability_Window_Estimate_Information_Content_Entity rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000745> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <https://www.commoncoreontologies.org/ont00001966> ;
+                                                                                   owl:someValuesFrom :Target_Vulnerability_Window
+                                                                                 ] ;
+                                                                 rdfs:label "Target Vulnerability Window Estimate Information Content Entity" ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "A Point Estimate Information Content Entity that is a measurement of the predicted or approximated duration of a temporal region during which a target is exposed, identifiable, and susceptible to effective strike by friendly forces." ;
+                                                                 <http://www.w3.org/2004/02/skos/core#example> "This metric reflects the actionable overlap between adversary exposure (dwell time), sensor custody, and friendly engagement timelines during dynamic or time-sensitive targeting." .
+
+
+###  https://www.commoncoreontologies.org/ont00000320
+<https://www.commoncoreontologies.org/ont00000320> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000057> ;
+                                                                     owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000544>
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000199> ;
+                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000203>
+                                                                   ] .
+
+
+###  https://www.commoncoreontologies.org/ont00000741
+<https://www.commoncoreontologies.org/ont00000741> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                     owl:someValuesFrom :Act_of_Target_Engagement
+                                                                   ] .
+
+
+###  https://www.commoncoreontologies.org/ont00000853
+<https://www.commoncoreontologies.org/ont00000853> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                                                     owl:someValuesFrom <https://www.commoncoreontologies.org/ont00000713>
+                                                                   ] .
 
 
 #################################################################
@@ -950,7 +1582,7 @@
 
 ###  http://www.semanticweb.org/vlunc/ontologies/2026/9/DynamicTargeting/PMTR_Tank1
 :PMTR_Tank1 rdf:type owl:NamedIndividual ,
-                     :Potential_Miltary_Target_Role ;
+                     :Potential_Military_Target_Role ;
             <http://purl.obolibrary.org/obo/BFO_0000197> :Tank1 .
 
 
